@@ -1,54 +1,63 @@
 import React from "react";
+import Header from "./components/Header"; // ✅ Importação adicionada
 import backgroundImage from "./assets/imagem.jpg";
 import "./index.css";
-import Certificacoes from "./components/Certificacoes";
 
 export default function App() {
   return (
     <div className="app-container">
       {/* Header no topo */}
-      <header className="header">
-        <h1 className="title">Portfólio</h1>
-        <nav>
-          <button
-            className="cert-btn"
-            onClick={() => {
-              const section = document.getElementById("certificacoes");
-              if (section) section.scrollIntoView({ behavior: "smooth" });
-            }}
+      <Header />
+
+      {/* Área com imagem e sobre mim */}
+      <div className="hero-section">
+        {/* Imagem de fundo */}
+        <div
+          className="background-image"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+
+        {/* Conteúdo sobreposto */}
+        <main className="content">
+          <div className="sobre-mim">
+            <h2>Eudney Gabriel</h2>
+            <p>
+              Sou um estudante do 2º ano do curso programador informático, da
+              escola Profissional do Fundão
+            </p>
+            <h2>Linguagens de programação</h2>
+            <ul className="skills-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>C / C++</li>
+              <li>React</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+        </main>
+      </div>
+
+      {/* Seção de certificações */}
+      <section className="certificacoes-section">
+        <h2>Certificações</h2>
+        {/* Aqui você poderá adicionar os cartões ou textos */}
+      </section>
+
+      <div className="cert-card">
+        <div className="cert-top">
+          <a
+            href="https://www.exemplo.com/certificado"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cert-link"
           >
-            Certificações
-          </button>
-        </nav>
-      </header>
-
-      {/* Imagem de fundo abaixo do Header */}
-      <div
-        className="background-image"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
-
-      {/* Conteúdo sobreposto */}
-      <main className="content">
-        <div className="sobre-mim">
-          <h2>Eudney Gabriel</h2>
-          <p>
-            Sou um estudante do 2º ano do curso programador informático, da
-            Escola Profissional do Fundão.
-          </p>
-          <h2>Linguagens de Programação</h2>
-          <ul className="skills-list">
-            <li>Java</li>
-            <li>Python</li>
-            <li>C / C++</li>
-            <li>React</li>
-            <li>JavaScript</li>
-          </ul>
+            Ver Certificado
+          </a>
         </div>
-
-        {/* Seção de certificações */}
-        <section id="certificacoes"></section>
-      </main>
+        <div className="cert-bottom">
+          <span>Certificação React</span>
+        </div>
+      </div>
     </div>
   );
 }

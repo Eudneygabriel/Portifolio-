@@ -15,14 +15,14 @@ body {
   overflow: hidden;
 }
 
-/* header */
 .header {
+  position: fixed; /* Adicionado */
+  top: 0; /* Garante que fique no topo */
+  left: 0;
   width: 100%;
   background: #2d72aa;
-  padding: 20px 30px;
-  display: flex; /* Adicionado */
-  justify-content: space-between; /* Adicionado */
-  align-items: center; /* Adicionado */
+  padding: 15px 35px;
+  z-index: 1000; /* Fica acima de outros elementos */
 }
 
 .title {
@@ -116,4 +116,69 @@ body {
 
 .cert-btn:hover {
   background-color: #e0e0e0;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh; /* garante que a imagem e conteúdo ocupem a tela inteira */
+}
+
+.certificacoes-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.certificacoes-section h2 {
+  font-size: 2rem;
+  color: #2d72aa;
+  margin-bottom: 20px;
+}
+
+.cert-card {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #2d72aa;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cert-top,
+.cert-bottom {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cert-top {
+  background-color: #f0f0f0;
+}
+
+.cert-link {
+  color: #2d72aa;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 2px solid #2d72aa;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.cert-link:hover {
+  background-color: #2d72aa;
+  color: white;
+}
+
+.cert-bottom {
+  background-color: #2d72aa;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
 }
