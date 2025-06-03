@@ -1,4 +1,4 @@
-/* reset */
+ç/* reset */
 * {
   margin: 0;
   padding: 0;
@@ -16,25 +16,25 @@ body {
 }
 
 .header {
-  position: fixed; /* Adicionado */
-  top: 0; /* Garante que fique no topo */
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   background: #2d72aa;
   padding: 15px 35px;
-  z-index: 1000; /* Fica acima de outros elementos */
+  z-index: 1000;
 }
 
 .title {
   color: #fff;
   font-size: 30px;
-  margin: 0; /* Garante que não haja espaço extra */
+  margin: 0;
 }
 
 /* imagem de fundo */
 .background-image {
   position: absolute;
-  top: 50px; /* igual à altura do header se for 50px de padding+line-height */
+  top: 50px;
   left: 0;
   width: 45%;
   height: calc(100% - 50px);
@@ -55,7 +55,7 @@ body {
 
 .sobre-mim {
   position: absolute;
-  top: 150px; /* empurra pra baixo */
+  top: 150px;
   right: 0;
   width: 50%;
   padding: 40px;
@@ -73,6 +73,8 @@ body {
 
 .sobre-mim p {
   margin-bottom: 1rem;
+  color: #121010;
+  font-weight: bold;
 }
 
 .sobre-mim h3 {
@@ -82,111 +84,62 @@ body {
 }
 
 .skills-list {
-  list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: flex-start; /* Alinha as imagens à esquerda */
+  padding-left: 0; /* Remove padding que possa deslocar as imagens */
+  margin-left: 0; /* Remove margem para deslocamento */
 }
 
 .skills-list li {
-  background: #2d72aa;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-
-.sobre-mim p {
-  color: #121010;
-  font-weight: bold;
-}
-
-.cert-btn {
-  background-color: #fff;
-  color: #2d72aa;
-  border: none;
-  padding: 8px 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-left: 80px; /* Altere isso */
-}
-
-.cert-btn:hover {
-  background-color: #e0e0e0;
-}
-
-.hero-section {
-  position: relative;
-  height: 100vh; /* garante que a imagem e conteúdo ocupem a tela inteira */
-}
-
-.certificacoes-section {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.certificacoes-section h2 {
-  font-size: 2rem;
-  color: #2d72aa;
-  margin-bottom: 20px;
-}
-
-.cert-card {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #2d72aa;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cert-top,
-.cert-bottom {
-  flex: 1;
+  background: none;
+  padding: 6px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  width: 70px;
+  height: 70px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.cert-top {
-  background-color: #f0f0f0;
-}
-
-.cert-link {
-  color: #2d72aa;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 8px 12px;
-  border: 2px solid #2d72aa;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.cert-link:hover {
-  background-color: #2d72aa;
-  color: white;
-}
-
-.cert-bottom {
-  background-color: #2d72aa;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.skill-icon {
+.skill-icon,
+.deploy-icon {
   width: 50px;
   height: auto;
   margin: 10px;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .background-image {
+    position: absolute;
+    top: 50px; /* afasta para mostrar a cabeça */
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: top center;
+
+    /* Sombreamento correto: começa embaixo e some para cima */
+    mask-image: linear-gradient(to top, transparent 0%, white 60%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, white 60%);
+
+    z-index: -1;
+  }
+
+  .sobre-mim {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-top: 320px; /* espaço para a imagem acima */
+  }
+}
+
+.skills-list {
+  justify-content: center;
 }
 .skills-list li {
   background: none;
@@ -201,8 +154,59 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.deploy-icon {
-  width: 50px;
-  height: auto;
-  margin: 10px;
+.cert-card {
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+}
+
+.certificacoes-section h2 {
+  font-size: 1.5rem;
+}
+
+.cert-link {
+  font-size: 0.9rem;
+  padding: 6px 10px;
+}
+
+.cert-btn {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .sobre-mim h2 {
+    font-size: 1.6rem;
+  }
+
+  .sobre-mim h3 {
+    font-size: 1.2rem;
+  }
+
+  .cert-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .cert-card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .skills-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .deploy-icon {
+    width: 40px;
+  }
 }

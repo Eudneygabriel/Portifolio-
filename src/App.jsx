@@ -76,22 +76,6 @@ export default function App() {
         <h2>Certificações</h2>
         {/* Aqui você poderá adicionar os cartões ou textos */}
       </section>
-
-      <div className="cert-card">
-        <div className="cert-top">
-          <a
-            href="https://www.exemplo.com/certificado"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cert-link"
-          >
-            Ver Certificado
-          </a>
-        </div>
-        <div className="cert-bottom">
-          <span>Certificação React</span>
-        </div>
-      </div>
     </div>
   );
 }
