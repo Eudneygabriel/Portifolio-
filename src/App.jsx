@@ -57,7 +57,7 @@ export default function App() {
 
             <section>
               <h2>Plataformas de Deploy</h2>
-              <ul className="skills-list">
+              <ul className="deploy-list">
                 <li>
                   <img src={vercelLogo} alt="Vercel" className="deploy-icon" />
                 </li>
@@ -70,12 +70,6 @@ export default function App() {
           </div>
         </main>
       </div>
-
-      {/* Seção de certificações */}
-      <section className="certificacoes-section">
-        <h2>Certificações</h2>
-        {/* Aqui você poderá adicionar os cartões ou textos */}
-      </section>
     </div>
   );
 }

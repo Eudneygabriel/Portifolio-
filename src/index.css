@@ -1,4 +1,4 @@
-ç/* reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +8,14 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* container geral */
+/* Container geral */
 .app-container {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
 }
 
+/* Cabeçalho */
 .header {
   position: fixed;
   top: 0;
@@ -24,14 +25,13 @@ body {
   padding: 15px 35px;
   z-index: 1000;
 }
-
 .title {
   color: #fff;
   font-size: 30px;
   margin: 0;
 }
 
-/* imagem de fundo */
+/* Imagem de fundo */
 .background-image {
   position: absolute;
   top: 50px;
@@ -46,13 +46,14 @@ body {
   z-index: -1;
 }
 
-/* conteúdo */
+/* Conteúdo */
 .content {
   position: relative;
   z-index: 0;
   padding: 20px;
 }
 
+/* Sobre mim */
 .sobre-mim {
   position: absolute;
   top: 150px;
@@ -64,114 +65,71 @@ body {
   line-height: 1.6;
   z-index: 1;
 }
-
 .sobre-mim h2 {
   font-size: 2.2rem;
   margin-bottom: 10px;
   color: #2d72aa;
 }
-
 .sobre-mim p {
   margin-bottom: 1rem;
   color: #121010;
   font-weight: bold;
 }
-
 .sobre-mim h3 {
   font-size: 1.5rem;
   margin-top: 20px;
   color: #444;
 }
 
-.skills-list {
+/* Listas de habilidades e deploy */
+.skills-list,
+.deploy-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: flex-start; /* Alinha as imagens à esquerda */
-  padding-left: 0; /* Remove padding que possa deslocar as imagens */
-  margin-left: 0; /* Remove margem para deslocamento */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: flex-start;
 }
 
-.skills-list li {
-  background: none;
-  padding: 6px;
-  border-radius: 8px;
+.skills-list li,
+.deploy-list li {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 70px;
   height: 70px;
   border: 2px solid #ccc;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: none;
 }
 
+/* Ícones */
 .skill-icon,
 .deploy-icon {
   width: 50px;
   height: auto;
-  margin: 10px;
+  margin: 0;
 }
 
-/* === RESPONSIVO === */
+/* Responsivo */
 @media (max-width: 768px) {
   .background-image {
-    position: absolute;
-    top: 50px; /* afasta para mostrar a cabeça */
-    left: 0;
     width: 100%;
     height: 300px;
-    background-size: cover;
     background-position: top center;
-
-    /* Sombreamento correto: começa embaixo e some para cima */
     mask-image: linear-gradient(to top, transparent 0%, white 60%);
     -webkit-mask-image: linear-gradient(to top, transparent 0%, white 60%);
-
-    z-index: -1;
   }
 
   .sobre-mim {
     position: relative;
     width: 100%;
     padding: 20px;
-    margin-top: 320px; /* espaço para a imagem acima */
+    margin-top: 320px;
   }
-}
-
-.skills-list {
-  justify-content: center;
-}
-.skills-list li {
-  background: none;
-  padding: 6px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  border: 2px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.cert-card {
-  width: 150px;
-  height: 150px;
-  margin: 10px auto;
-}
-
-.certificacoes-section h2 {
-  font-size: 1.5rem;
-}
-
-.cert-link {
-  font-size: 0.9rem;
-  padding: 6px 10px;
-}
-
-.cert-btn {
-  margin-left: 0;
-  margin-top: 20px;
 }
 
 @media (max-width: 480px) {
@@ -185,25 +143,6 @@ body {
 
   .sobre-mim h3 {
     font-size: 1.2rem;
-  }
-
-  .cert-btn {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-  }
-
-  .cert-card {
-    width: 120px;
-    height: 120px;
-  }
-
-  .skills-list {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
   }
 
   .deploy-icon {
